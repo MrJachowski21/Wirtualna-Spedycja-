@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowe Zlecenie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nowe Zlecenie</h1>
+        <p><strong>Miejsce docelowe:</strong> <span id="destination"></span></p>
+        <p><strong>Ładunek:</strong> <span id="cargo"></span></p>
+        <p><strong>Waga ładunku (tony):</strong> <span id="weight"></span></p>
+        <p><strong>Termin dostawy:</strong> <span id="deadline"></span></p>
+        <p><strong>Uwagi:</strong> <span id="comments"></span></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('destination').textContent = urlParams.get('destination');
+            document.getElementById('cargo').textContent = urlParams.get('cargo');
+            document.getElementById('weight').textContent = urlParams.get('weight');
+            document.getElementById('deadline').textContent = urlParams.get('deadline');
+            document.getElementById('comments').textContent = urlParams.get('comments');
+        }
+    </script>
+</body>
+</html>
